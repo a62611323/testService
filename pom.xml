@@ -1,0 +1,37 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.changheng</groupId>
+		<artifactId>changheng-parent</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
+	<groupId>com.changheng</groupId>
+	<artifactId>changheng-manager</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>pom</packaging>
+	<build>
+		<plugins>
+            <plugin>
+                <groupId>org.apache.tomcat.maven</groupId>
+                <artifactId>tomcat7-maven-plugin</artifactId>
+                <version>2.1</version>
+                <configuration>
+                    <!--端口 -->
+                    <port>8800</port>
+                    <!--注意名称 -->
+                    <path>/manager</path>
+                    <uriEncoding>UTF-8</uriEncoding>
+                    <!--注意此名字 启动时会用到 -->
+                    <server>tomcat7</server>
+                </configuration>
+            </plugin>
+		</plugins>
+	</build>
+	<modules>
+		<module>changheng-manager-dao</module>
+		<module>changheng-manager-pojo</module>
+		<module>changheng-manager-interface</module>
+		<module>changheng-manager-service</module>
+	</modules>
+</project>
